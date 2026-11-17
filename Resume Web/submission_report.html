@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Mid-Term Project Report | Shreyash Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 1.6cm 1.4cm;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #0f172a;
+            background-color: #f8fafc;
+            line-height: 1.55;
+            font-size: 13px;
+            padding: 2rem 1rem;
+        }
+
+        .report-page {
+            max-width: 820px;
+            margin: 0 auto 2.5rem;
+            background: #ffffff;
+            padding: 2.2rem 2.4rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .header-section {
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-title h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .header-title p {
+            font-size: 0.825rem;
+            color: #e8710a;
+            font-weight: 600;
+            margin-top: 0.2rem;
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-meta {
+            text-align: right;
+            font-size: 0.825rem;
+            color: #475569;
+        }
+
+        .header-meta strong {
+            color: #0f172a;
+        }
+
+        /* Submission Links Callout Box */
+        .links-callout {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid #059669;
+            padding: 0.85rem 1.15rem;
+            border-radius: 4px;
+            margin-bottom: 1.25rem;
+            display: grid;
+            gap: 0.35rem;
+            font-size: 0.875rem;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .link-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .link-label {
+            width: 175px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .link-value a {
+            color: #e8710a;
+            font-weight: 600;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+
+        /* Sections */
+        .report-section {
+            margin-bottom: 1.15rem;
+        }
+
+        .report-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .report-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.55rem;
+            letter-spacing: -0.01em;
+        }
+
+        .report-section h3 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #e8710a;
+            margin-top: 0.65rem;
+            margin-bottom: 0.3rem;
+            font-family: 'DM Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        p {
+            margin-bottom: 0.55rem;
+            text-align: justify;
+            color: #334155;
+        }
+
+        ul {
+            margin-left: 1.25rem;
+            margin-bottom: 0.55rem;
+            color: #334155;
+        }
+
+        li {
+            margin-bottom: 0.25rem;
+        }
+
+        code {
+            font-family: 'DM Mono', monospace;
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 0.1rem 0.3rem;
+            border-radius: 2px;
+            font-size: 0.85em;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                font-size: 11pt;
+                line-height: 1.45;
+            }
+
+            .report-page {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Instruction Banner */
+        .instruction-banner {
+            max-width: 820px;
+            margin: 0 auto 1.25rem;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 0.85rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #92400e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .print-btn {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 0.45rem 1.1rem;
+            border-radius: 4px;
+            font-size: 0.825rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .print-btn:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- On-screen print instruction banner (Hidden in print) -->
+    <div class="instruction-banner no-print">
+        <div>
+            <strong>Ready to generate PDF:</strong> Click <em>"Print / Save PDF"</em> or press <kbd>Ctrl + P</kbd>, select <em>"Save as PDF"</em>, ensure <em>Background graphics</em> is enabled, and save as <code>[YourRollNo]_WD_MTProject.pdf</code>.
+        </div>
+        <button class="print-btn" onclick="window.print()">Print / Save PDF ↗</button>
+    </div>
+
+    <!-- ==================== PAGE 1 ==================== -->
+    <div class="report-page">
+        <header class="header-section">
+            <div class="header-title">
+                <h1>Shreyash Kumar</h1>
+                <p>WD_MTProject // Minimalist Finance &amp; Editorial Resume</p>
+            </div>
+            <div class="header-meta">
+                <div><strong>Program:</strong> BBA (Digital Business &amp; Entrepreneurship)</div>
+                <div><strong>Institution:</strong> IIM Bangalore</div>
+                <div><strong>Submission Date:</strong> 17 November 2026</div>
+            </div>
+        </header>
+
+        <!-- Mandatory Submission Links -->
+        <div class="links-callout">
+            <div class="link-row">
+                <span class="link-label">Live Website Link:</span>
+                <span class="link-value">
+                    <a href="https://yourusername.github.io/resume-website/" target="_blank">https://yourusername.github.io/resume-website/</a>
+                    <em>(Replace with your deployed GitHub Pages URL)</em>
+                </span>
+            </div>
+            <div class="link-row">
+                <span class="link-label">GitHub Repository:</span>
+                <span class="link-value">
+                    <a href="https://github.com/yourusername/resume-website" target="_blank">https://github.com/yourusername/resume-website</a>
+                    <em>(Replace with your GitHub repository URL)</em>
+                </span>
+            </div>
+        </div>
+
+        <!-- 1. Introduction -->
+        <section class="report-section">
+            <h2>1. Project Objectives &amp; Design Philosophy</h2>
+            <p>
+                The objective of this assignment is to transform my foundational resume website into a refined, editorial-grade digital portfolio built on a <strong>Black &amp; Rolex Green Finance aesthetic</strong>. Grounded in the philosophy that <em>"a degree is only useful if it has somewhere to land,"</em> the website avoids superficial visual noise and dense corporate jargon. Instead, it pairs authentic first-person storytelling with structured financial data tags, crisp typography, and high-readability layout architecture across core sections - Approach, Selected Work, Market Quote, Services Accordion, Beyond the Classroom, Education Ledger, and Contact.
+            </p>
+        </section>
+
+        <!-- 2. Typography & Color Palette -->
+        <section class="report-section">
+            <h2>2. Visual Palette &amp; Typographic System (Module 2)</h2>
+            <p>
+                The visual identity merges classic editorial elegance with modern financial market precision:
+            </p>
+            <ul>
+                <li><strong>Tri-Font Typographic Stack:</strong> Headings feature the classic editorial serif <strong>Playfair Display</strong>; body text uses the clean, geometric <strong>DM Sans</strong> for digital legibility; while <strong>DM Mono</strong> powers kicker tags, ticker items, and data labels.</li>
+                <li><strong>Very Dim / Dark Finance Palette:</strong> The canvas employs a low-strain, very dim midnight slate canvas (<code>#0c1017</code>) paired with elevated dim card surfaces (<code>#141b24</code>) and subtle dividers (<code>#1f2a3a</code>). The primary accent is a luminous Rolex Jubilee Emerald (<code>#00a862</code>) evoking Swiss institutional wealth and precision growth, paired with crisp silver-white typography (<code>#f1f5f9</code> / <code>#cbd5e1</code>).</li>
+                <li><strong>Color Psychology &amp; Tokens:</strong> Dim Slate (<code>#0c1017</code> / <code>#141b24</code>) completely removes eye glare; Rolex Emerald (<code>#00a862</code>) highlights brand actions, buttons, and section kickers; Market Green (<code>#10b981</code>) and Market Red (<code>#ef4444</code>) serve as authentic live market ticker indicators (<code>▲</code> up / <code>▼</code> down).</li>
+            </ul>
+        </section>
+
+        <!-- 3. Layout Architecture & Display Properties -->
+        <section class="report-section">
+            <h2>3. Layout Architecture &amp; Display Properties (Module 4 &amp; 5)</h2>
+            <h3>Sticky Header &amp; Infinite Live Market Marquee Ticker</h3>
+            <p>
+                The topbar (<code>position: sticky; top: 0; backdrop-filter: blur(12px)</code>) utilizes <strong>Flexbox</strong> (<code>display: flex; justify-content: space-between</code>) for instant section navigation. Immediately below sits an automated infinite-scrolling marquee ticker tape powered by pure CSS (<code>@keyframes marquee</code>), streaming domain tags with live financial market indicators: alternating green up arrows (<code>▲</code>) and red down arrows (<code>▼</code>).
+            </p>
+            <h3>Heroic Executive Profile Presentation (CSS Grid &amp; Frameless Cutout)</h3>
+            <p>
+                The hero section utilizes an asymmetric 2-column grid (<code>grid-template-columns: 1.05fr .95fr</code>). It showcases a clean, frameless, background-free executive portrait cutout standing heroically directly on the very dim midnight slate canvas (<code>#0c1017</code>), illuminated by an ambient emerald radial glow (<code>radial-gradient</code>) and a natural silhouette contour drop-shadow (<code>filter: drop-shadow(...)</code>), anchored by a prominent "Proof of Work" action button.
+            </p>
+            <h3>Curated Editorial Art &amp; Collage System (Approach &amp; Selected Work)</h3>
+            <p>
+                Each core section is enriched with conceptual surrealist collage and linocut artwork: the <em>Untangling Knot</em> illustration in Section 01 represents navigating messy operational execution; the <em>Engraved Handshake</em> anchors the IIMB Partnership Cell featured project card; the <em>Tablet Growth Curve</em> illustrates online reselling profitability (₹15,000+); the <em>Cobalt Artisan Hand</em> visually grounds affiliate copywriting; the <em>Press Microphones &amp; Megaphone Banner</em> captures Youth Parliament leadership; and the <em>Botanical Lily</em> symbolizes mindfulness and yoga discipline.
+            </p>
+            <h3>Surreal Financial Collage &amp; Ledger Terminal (Section 06)</h3>
+            <p>
+                The contact section pairs an editorial header featuring a custom surreal financial markets collage illustration (market growth chart head, magnifying glass, laptop) with a structured direct-outreach ledger terminal.
+            </p>
+        </section>
+
+        <!-- 4. Implementation of CSS Selectors -->
+        <section class="report-section">
+            <h2>4. Systematic Use of CSS Selectors (Module 4)</h2>
+            <ul>
+                <li><strong>Universal Selector (<code>*</code>):</strong> Enforces <code>box-sizing: border-box</code> globally, ensuring padding does not distort layouts.</li>
+                <li><strong>Element Selectors:</strong> Set base typographic scales, line heights, and margins across semantic tags (<code>body</code>, <code>h1</code>&ndash;<code>h3</code>, <code>summary</code>, <code>details</code>).</li>
+                <li><strong>Class Selectors:</strong> Reusable atomic components such as <code>.project</code>, <code>.button.primary</code>, <code>.data-tag</code>, and <code>.beyond-card</code> ensure clean modularity.</li>
+                <li><strong>ID Selectors:</strong> Direct landmark scroll-targets (<code>#approach</code>, <code>#work</code>, <code>#help</code>, <code>#beyond</code>, <code>#contact</code>).</li>
+                <li><strong>Pseudo-Classes &amp; Pseudo-Elements:</strong> <code>::selection</code> customizes text highlighting to growth green; <code>:hover</code> powers smooth micro-elevations; <code>.service[open] .plus</code> dynamically rotates accordion icons via <code>transform: rotate(45deg)</code>.</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="report-page page-break">
+        <!-- 5. User Experience & Interactive Features -->
+        <section class="report-section">
+            <h2>5. User Experience &amp; Micro-Interactions (UX/UI)</h2>
+            <p>
+                Dynamic interactive features provide instant, intuitive feedback:
+            </p>
+            <ul>
+                <li><strong>Interactive Services Accordion:</strong> The <em>"Where I'm useful"</em> section employs semantic <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements with custom plus/close transitions (<code>transform: rotate(45deg)</code>), allowing users to drill into capabilities.</li>
+                <li><strong>Hover Elevation:</strong> Project cards subtly transition on hover (<code>transform: translateY(-2px); border-color: var(--green)</code>) with soft drop shadows.</li>
+                <li><strong>Ledger Contact Terminal:</strong> The contact section features a 2-column ledger design-pairing left-hand dashed metadata rows with a structured direct message form.</li>
+                <li><strong>Responsive Media Queries:</strong> Handled via <code>@media (max-width: 900px)</code>, cleanly collapsing multi-column grids into single-column mobile flows while preserving touch targets.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Content Personalization -->
+        <section class="report-section">
+            <h2>6. Authentic Personalization &amp; Experiences</h2>
+            <p>
+                All sections are built strictly from my verified background, structured as real-world deliverables:
+            </p>
+            <ul>
+                <li><strong>Industry Outreach &bull; IIM Bangalore:</strong> Selection as 1 of only 10 student coordinators from 400+ applicants (top 2.5% cohort) in the Partnership Cell; deploying 100+ personalized emails to corporate CXOs.</li>
+                <li><strong>Direct E-Commerce &bull; Meesho &amp; Facebook Marketplace:</strong> Generated ₹15,000+ in profit on zero upfront capital, fielded enquiries from 300+ customers, built a 2,000-follower page, and maintained an order ledger.</li>
+                <li><strong>Affiliate Sales &amp; Content:</strong> Authoring curated tech guides, converting 3 high-value laptop sales via Amazon affiliate links, and earning USD gift cards.</li>
+                <li><strong>Macro Research &bull; <em>"India's Gold Obsession"</em>:</strong> Research report written during probation at the IIMB Partnership Cell analyzing gold's role as an informal rural safety net and Sovereign Gold Bonds (SGB) as a policy alternative.</li>
+                <li><strong>Head Boy (School Captain), GD DAV Public School:</strong> Led the student council across 5+ events; co-organized 1,500+ attendee gala fest; personally received the District Magistrate (DC).</li>
+                <li><strong>Youth Parliament &amp; Competitions:</strong> Appointed Finance Minister representing the ruling party at the Deoghar Book Fair; Finalist in MANIT Bhopal's <em>Crack The Case</em>; and Gold Medalist at the District Yoga Championship.</li>
+            </ul>
+        </section>
+
+        <!-- 7. Education Summary -->
+        <section class="report-section">
+            <h2>7. Scholastic Track Record (Module 3/4 Compliance)</h2>
+            <p>
+                The education section presents credentials in a clean ledger list (<code>.edu-list</code> / <code>.edu-row</code>), clearly detailing my ongoing BBA studies in Digital Business &amp; Entrepreneurship at IIM Bangalore (2026&ndash;Present), Class 12 Commerce score (<strong>84.4%</strong>), and Class 10 score (<strong>88.0%</strong>).
+            </p>
+        </section>
+
+        <!-- 8. Conclusion -->
+        <section class="report-section">
+            <h2>8. Conclusion &amp; Key Takeaways</h2>
+            <p>
+                Implementing this minimalist finance design demonstrated how restrained typography, intentional color tokens, and interactive semantic components communicate authenticity and commercial maturity. The resulting platform delivers an engaging user experience while fully complying with all assignment requirements.
+            </p>
+        </section>
+    </div>
+
+</body>
+</html>
